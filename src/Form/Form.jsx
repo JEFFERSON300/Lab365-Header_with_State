@@ -1,7 +1,7 @@
 import "./Form.css";
 import { useRef } from "react";
 
-function Login() {
+function Form() {
   const apelidoInputElement = useRef();
   const idadeInputElement = useRef();
   const emailInputElement = useRef();
@@ -88,4 +88,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Form;
