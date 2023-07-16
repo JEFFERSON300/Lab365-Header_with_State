@@ -20,7 +20,9 @@ function Form() {
       window.alert("Idade inválida");
     }
     if (
-      /[^a-zA-Z0-9_.+-]|\.\.|\.\@|\@\./.test(emailInputElement.current?.value)
+      !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(
+        emailInputElement.current?.value
+      )
     ) {
       window.alert("Email inválido");
     }
@@ -33,6 +35,11 @@ function Form() {
         email: emailInputElement.current?.value,
         password: passwordInputElement.current?.value,
       };
+
+      localStorage.setItem(
+        (localStorage.length + 1).toString(),
+        JSON.stringify(user)
+      );
     }
   };
 
